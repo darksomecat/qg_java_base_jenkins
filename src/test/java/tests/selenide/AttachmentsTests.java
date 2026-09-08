@@ -5,48 +5,33 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.attachment;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.linkText;
 
-public class StepsTests extends TestBase {
+public class AttachmentsTests extends TestBase {
     private  static final  String REPOSITORY = "qa-guru/qa_guru_14_10";
     private  static final  int ISSUE = 2;
 
     @Test
-    public void testLambdaStep(){
+    public void testLambdaAttachments(){
         SelenideLogger.addListener("allure", new AllureSelenide());
 
         step("Открываем главную страницу", () -> {
             open("https://github.com");
-        });
-        step("Ищем репозиторий " + REPOSITORY, () -> {
-            $("[class*='HeaderSearch-module__trigger']").click();
-            $("[class*='searchContainer'] input").setValue(REPOSITORY).pressEnter();
-        });
-        step("Кликаем по ссылке репозитория " + REPOSITORY, () -> {
-            $(linkText(REPOSITORY)).click();
-        });
-        step("Открываем вкладку Issues", () -> {
-            $("#issues-tab").click();
-        });
-        step("Проверяем наличие Issue с номером " + ISSUE, () -> {
-            $("[data-testid='list-row-repo-name-and-number']")
-                    .shouldBe(visible)
-                    .shouldHave(text("#" + ISSUE));
+            attachment("Source", webdriver().driver().source());
         });
 
     }
     @Test
-    public void testAnnotatedStep(){
+    public void testAnnotatedAttachments(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
         steps.openMainPage();
-        steps.searchForRepository(REPOSITORY);
-        steps.clickOnRepositoryLink(REPOSITORY);
-        steps.openIssuesTab();
-        steps.shouldSeeIssueWithNumber(ISSUE);
+        steps.takeScreensot();
 
     }
 }
