@@ -12,6 +12,8 @@ public class TestBase {
         Configuration.baseUrl = "https://qa-guru.github.io/one-page-form";
         //Configuration.holdBrowserOpen = true;
         Configuration.browserSize="1428x1158";
+//        Configuration.browserVersion = "128.0";
+        Configuration.remote = "https://user1:1234@selenoid.qa.guru/wd/hub";
         closeWebDriver();
     }
 }
