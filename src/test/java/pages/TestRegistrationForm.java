@@ -1,4 +1,4 @@
-package tests.allureUpdForQaguruForm;
+package pages;
 
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
@@ -59,7 +59,8 @@ public class TestRegistrationForm extends TestBase {
         $(byId("userNumber")).setValue("8123456789");
         $(byId("submit")).click();
         //проверка результата заполнения формы
-        $("[id=example-modal-sizes-title-lg]").shouldHave(text("Thanks for submitting the form"));
+        $(
+                "[id=example-modal-sizes-title-lg]").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Anna Ukolova"));
         $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("-"));
         $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));

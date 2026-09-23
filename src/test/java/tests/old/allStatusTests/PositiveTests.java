@@ -1,4 +1,4 @@
-package tests.allStatusTests;
+package tests.old.allStatusTests;
 
 import org.junit.jupiter.api.Test;
 

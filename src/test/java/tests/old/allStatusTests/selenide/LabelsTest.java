@@ -1,4 +1,4 @@
-package tests.selenide;
+package tests.old.allStatusTests.selenide;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;

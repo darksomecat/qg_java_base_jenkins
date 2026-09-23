@@ -1,4 +1,4 @@
-package tests.selenide;
+package tests.old.allStatusTests.selenide;
 
 import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
