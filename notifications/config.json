@@ -1,0 +1,21 @@
+{
+  "base": {
+    "project": "darksome_cat-qg_homework_qa",
+    "environment": "env",
+    "comment": "auto",
+    "reportLink": "https://jenkins.qa.guru/job/darksome_cat-qg_homework_qa/20/",
+    "language": "en",
+    "allureFolder": "allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "8668313207:AAE4LeQscECrrH-XN4q0gABPawK4ouukwnc",
+    "chat": "-1003992949424",
+    "replyTo": ""
+  },
+  "proxy": {
+    "type": "socks5",
+    "host": "proxy.qaguru.school",
+    "port": 7777
+  }
+}
